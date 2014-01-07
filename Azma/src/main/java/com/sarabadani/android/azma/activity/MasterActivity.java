@@ -37,9 +37,7 @@ public abstract class MasterActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(false);
         getSupportActionBar().setDisplayUseLogoEnabled(false);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mPlanetTitles));
-
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_item,R.id.main_name, mPlanetTitles));
         bodyLayout = (LinearLayout) findViewById(R.id.body);
 
 
