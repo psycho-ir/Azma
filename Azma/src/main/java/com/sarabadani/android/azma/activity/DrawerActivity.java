@@ -44,24 +44,5 @@ public class DrawerActivity extends ActionBarActivity {
 
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.action_menu:
-                if (mDrawerLayout.isDrawerOpen(Gravity.RIGHT))
-                    mDrawerLayout.closeDrawer(Gravity.RIGHT);
-                else mDrawerLayout.openDrawer(Gravity.RIGHT);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-
-    }
 }

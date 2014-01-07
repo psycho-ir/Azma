@@ -17,15 +17,23 @@
                 android:layout_height="match_parent"
                 android:background="#00aaFF"
                 ></FrameLayout>
-    </FrameLayout>-
+
+        <LinearLayout
+                android:orientation="vertical"
+                android:id="@+id/body"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+        </LinearLayout>
+    </FrameLayout>
     <!-- The navigation drawer -->
-        <ListView
-                android:layout_gravity="right"
-                android:id="@+id/left_drawer"
-                android:layout_width="240dp"
-                android:layout_height="match_parent"
-                android:choiceMode="singleChoice"
-                android:divider="@android:color/darker_gray"
-                android:dividerHeight="0dp"
-                android:background="#5a5a5a" />
+    <ListView
+            android:layout_gravity="right"
+            android:id="@+id/left_drawer"
+            android:layout_width="240dp"
+            android:layout_height="match_parent"
+            android:choiceMode="singleChoice"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="0dp"
+            android:background="#5a5a5a"/>
 </android.support.v4.widget.DrawerLayout>
