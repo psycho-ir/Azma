@@ -1,16 +1,15 @@
 package com.sarabadani.android.azma.activity;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.*;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 import com.sarabadani.android.azma.R;
 
 /**
@@ -22,12 +21,14 @@ public abstract class MasterActivity extends ActionBarActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
     private LinearLayout bodyLayout;
+    private Typeface typeFace;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         super.setContentView(R.layout.activity_drawer);
+        typeFace = Typeface.createFromAsset(getAssets(), "font/BYekan.ttf");
 
         mPlanetTitles = getResources().getStringArray(R.array.planets);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -37,7 +38,17 @@ public abstract class MasterActivity extends ActionBarActivity {
         getSupportActionBar().setDisplayShowCustomEnabled(false);
         getSupportActionBar().setDisplayUseLogoEnabled(false);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_item,R.id.main_name, mPlanetTitles));
+
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_item, R.id.main_name, mPlanetTitles) {
+            @Override
+            public View getView(int position, View convertView, ViewGroup parent) {
+                View v = super.getView(position, convertView, parent);
+                TextView txt = (TextView) v.findViewById(R.id.main_name);
+                txt.setTypeface(typeFace,Typeface.BOLD);
+                return v;
+
+            }
+        });
         bodyLayout = (LinearLayout) findViewById(R.id.body);
 
 

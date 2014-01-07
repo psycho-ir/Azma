@@ -2,4 +2,5 @@
 <resources>
     <color name="bg_main">#e3e3e3</color>
     <color name="drawer_divider">#A0A050</color>
+    <color name="actionbar_bg">#ff6611</color>
 </resources>

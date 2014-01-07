@@ -2,5 +2,17 @@
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+
+        <item name="android:actionBarStyle">@style/CustomActionBar</item>
+        <item name="actionBarStyle">@style/CustomActionBar</item>
     </style>
+
+    <style name="CustomActionBar" parent="Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@color/actionbar_bg</item>
+
+        <!-- Support library compatibility -->
+        <item name="background">@color/actionbar_bg</item>
+    </style>
+
+
 </resources>
